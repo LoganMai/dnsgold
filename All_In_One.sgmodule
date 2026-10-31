@@ -1,9 +1,8 @@
-﻿#!url=https://raw.githubusercontent.com/LoganMai/dnsgold/refs/heads/main/All_In_One.sgmodule
+#!url=https://raw.githubusercontent.com/LoganMai/dnsgold/refs/heads/main/All_In_One.sgmodule
 #!name=All In One
-#!desc=ÄÆ°á»£c tá»•ng há»£p bá»Ÿi Äinh Duy Vinh (ÄÃ£ sá»­a lá»—i & tá»‘i Æ°u hÃ³a)
-#!author=duyvinh09
-#!homepage=https://module-ios.netlify.app
-#!tgchannel=https://t.me/tienich
+#!desc=All In One (Đã sửa lỗi & tối ưu hóa)
+#!author=LoganMai
+#!homepage=https://github.com/LoganMai/dnsgold
 #!moduleUrl=https://raw.githubusercontent.com/LoganMai/dnsgold/refs/heads/main/All_In_One.sgmodule
 #!icon=https://raw.githubusercontent.com/LoganMai/dnsgold/refs/heads/main/assets/img/shadowrocket.webp
 #!howtouse=Shadowrocket
@@ -19,7 +18,7 @@ AND,((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)),REJECT
 http-request ^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/user-customization-service\/v1\/customize$ header-del if-none-match
 
 [Url Rewrite]
-# Cháº·n quáº£ng cÃ¡o Google Video
+# Chặn quảng cáo Google Video
 ^https?:\/\/[\w-]+\.googlevideo\.com\/(?!(dclk_video_ads|videoplayback\?)).+&oad _ reject-200
 
 # YouTube Ads
@@ -57,7 +56,7 @@ SoundCloudGo+ = type=http-response,pattern=^https:\/\/api-mobile\.soundcloud\.co
 
 #VSCO
 #hostname = api.revenuecat.com
-# ÄÃ£ Ä‘Æ°á»£c tÃ­ch há»£p trong RevenueCatVip bÃªn dÆ°á»›i; giá»¯ tÃ¹y chá»n náº¿u dÃ¹ng riÃªng:
+# Đã được tích hợp trong RevenueCatVip bên dưới; giữ tùy chọn nếu dùng riêng:
 #VSCO = type=http-request,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/?(.*?)*$),script-path=https://raw.githubusercontent.com/LoganMai/dnsgold/refs/heads/main/js/VSCO.js,requires-body=true,timeout=60
 #************************************#
 
@@ -104,12 +103,12 @@ BeautyPlus = type=http-response,pattern=^https:\/\/(api\.mr\.pixocial\.com\/v1\/
 
 #LocketGold
 #hostname = api.revenuecat.com, firebaseremoteconfig.googleapis.com
-# GÃ³i Gold trÃªn RevenueCat Ä‘Ã£ Ä‘Æ°á»£c xá»­ lÃ½ táº­p trung táº¡i RevenueCatVip bÃªn dÆ°á»›i Ä‘á»ƒ trÃ¡nh xung Ä‘á»™t:
-#revenuecat = type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$),script-path=https://raw.githubusercontent.com/LoganMai/dnsgold/refs/heads/main/js/Locket_DuyVinh09.js,requires-body=true,max-size=-1,timeout=60
+# Gói Gold trên RevenueCat đã được xử lý tập trung tại RevenueCatVip bên dưới để tránh xung đột:
+#revenuecat = type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts$|subscribers\/[^/]+$),script-path=https://raw.githubusercontent.com/LoganMai/dnsgold/refs/heads/main/js/Locket.js,requires-body=true,max-size=-1,timeout=60
 locket_rc = type=http-response,pattern=^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/.+,script-path=https://raw.githubusercontent.com/LoganMai/dnsgold/refs/heads/main/js/Locket_Unlocked.js,requires-body=true,max-size=-1,timeout=60
 #************************************#
 
-#RevenueCatVip (Bao gá»“m cáº£ Locket Gold, VSCO vÃ  170+ á»©ng dá»¥ng)
+#RevenueCatVip (Bao gồm cả Locket Gold, VSCO và 170+ ứng dụng)
 #hostname = api.revenuecat.com, api.rc-backup.com
 RevenueCatVip = type=http-response,pattern=^https:\/\/api\.(revenuecat|rc-backup)\.com\/.+\/(receipts$|subscribers\/[^/]+$),script-path=https://raw.githubusercontent.com/LoganMai/dnsgold/refs/heads/main/js/revenuecat.js,requires-body=true,max-size=-1,timeout=60
 #************************************#
