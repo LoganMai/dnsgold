@@ -13,6 +13,7 @@ try {
 var obj = JSON.parse($response.body);
 
 if (ua.includes("Locket")) {
+    obj.state = "UPDATE";
     obj.Attention = "Chúc mừng bạn! Vui lòng không sử dụng chúng dưới mục đích thương mại!";
     obj.entries = obj.entries || {};
 
