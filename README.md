@@ -12,11 +12,16 @@ Bộ cấu hình và script dành cho **Shadowrocket / Surge** đã được gi�
   ```text
   https://raw.githubusercontent.com/LoganMai/dnsgold/refs/heads/main/All_In_One.sgmodule
   ```
+* **Hồ sơ DNS giữ Locket Gold (`LocketGold.mobileconfig` - Mở bằng Safari để cài cấu hình DNS)**:
+  ```text
+  https://raw.githubusercontent.com/LoganMai/dnsgold/refs/heads/main/LocketGold.mobileconfig
+  ```
 
 ## Cấu trúc thư mục
 - `All_In_One.conf`: File cấu hình đầy đủ cho Shadowrocket.
 - `All_In_One.sgmodule`: File Module mở rộng cho Shadowrocket / Surge.
-- `js/`: Toàn bộ 24 tệp JavaScript xử lý dữ liệu đã được giải mã và bọc chống treo mạng (`try...catch`).
+- `LocketGold.mobileconfig`: Hồ sơ DNS-over-HTTPS (NextDNS) chặn thu hồi Locket Gold & các ứng dụng RevenueCat.
+- `js/`: Toàn bộ các tệp JavaScript xử lý dữ liệu đã được giải mã và bọc chống treo mạng (`try...catch`).
 - `assets/img/shadowrocket.webp`: Icon hiển thị của Module.
 
 ## Hướng dẫn cài đặt trên iPhone (Shadowrocket)
