@@ -36,6 +36,18 @@
 
                 <key>ServerURL</key>
                 <string>https://dns.nextdns.io/ca5278</string>
+
+                <key>SupplementalMatchDomains</key>
+                <array>
+                    <string>revenuecat.com</string>
+                    <string>firebaseremoteconfig.googleapis.com</string>
+                    <string>sentry.io</string>
+                    <string>youtube.com</string>
+                    <string>googlevideo.com</string>
+                    <string>youtubei.googleapis.com</string>
+                    <string>doubleclick.net</string>
+                    <string>googlesyndication.com</string>
+                </array>
             </dict>
 
             <key>OnDemandRules</key>
