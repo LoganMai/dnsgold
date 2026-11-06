@@ -14,7 +14,7 @@ Bộ cấu hình và script dành cho **Shadowrocket / Surge** đã được gi�
   ```
 * **Hồ sơ DNS giữ Locket Gold (`LocketGold.mobileconfig` - Mở bằng Safari để cài cấu hình DNS)**:
   ```text
-  https://raw.githubusercontent.com/LoganMai/dnsgold/refs/heads/main/LocketGold.mobileconfig
+  https://cdn.jsdelivr.net/gh/LoganMai/dnsgold@main/LocketGold.mobileconfig
   ```
 
 ## Cấu trúc thư mục
