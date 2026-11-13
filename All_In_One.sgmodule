@@ -13,10 +13,13 @@ AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)),REJECT
 AND,((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)),REJECT
 
 [Header Rewrite]
-^https?://api\.(revenuecat|rc-backup)\.com/.+/(receipts$|subscribers/?(.*?)*$) header-del x-revenuecat-etag
-^https?://api\.(revenuecat|rc-backup)\.com/.+/(receipts$|subscribers/?(.*?)*$) header-del X-RevenueCat-ETag
+http-request ^https?://api\.(revenuecat|rc-backup)\.com/.+/(receipts$|subscribers/?(.*?)*$) header-del x-revenuecat-etag
+http-request ^https?://api\.(revenuecat|rc-backup)\.com/.+/(receipts$|subscribers/?(.*?)*$) header-del X-RevenueCat-ETag
+http-request ^https?://api\.(revenuecat|rc-backup)\.com/.+/(receipts$|subscribers/?(.*?)*$) header-del if-none-match
+http-request ^https?://api\.(revenuecat|rc-backup)\.com/.+/(receipts$|subscribers/?(.*?)*$) header-del If-None-Match
 http-request ^https:\/\/(spclient\.wg\.spotify\.com|.*-spclient\.spotify\.com(:443)?)\/user-customization-service\/v1\/customize$ header-del if-none-match
 http-request ^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/.+ header-del if-none-match
+http-request ^https:\/\/firebaseremoteconfig\.googleapis\.com\/v1\/projects\/locket-4252a\/.+ header-del If-None-Match
 
 [Url Rewrite]
 # Chặn quảng cáo Google Video

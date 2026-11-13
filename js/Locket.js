@@ -49,6 +49,7 @@ if (!/Locket/i.test(ua) || !$response || !$response.body) {
         var goldProduct = "locket_1600_1y";
         obj.subscriber.subscriptions[goldProduct] = makeSub(goldProduct, 399000.0, "VND");
         obj.subscriber.entitlements["Gold"] = makeEnt(goldProduct);
+        obj.subscriber.entitlements["gold"] = makeEnt(goldProduct);
 
         $done({
             body: JSON.stringify(obj)

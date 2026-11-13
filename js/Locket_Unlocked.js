@@ -6,13 +6,13 @@
 // ============================================================
 
 var ua = ($request && $request.headers && ($request.headers["User-Agent"] || $request.headers["user-agent"])) || "";
-if (!$response || !$response.body || !ua.includes("Locket")) {
+if (!$response || !$response.body || !/Locket/i.test(ua)) {
     $done({});
 } else {
 try {
 var obj = JSON.parse($response.body);
 
-if (ua.includes("Locket")) {
+if (/Locket/i.test(ua)) {
     obj.state = "UPDATE";
     obj.Attention = "Chúc mừng bạn! Vui lòng không sử dụng chúng dưới mục đích thương mại!";
     obj.entries = obj.entries || {};
@@ -24,6 +24,7 @@ if (ua.includes("Locket")) {
         feature_gates: JSON.stringify({
             app_icon_picker: "enabled",
             camera_roll: "enabled",
+            camera_roll_upload: "enabled",
             camera_theme: "enabled",
             locket_views: "enabled",
             long_captions: "enabled",
@@ -143,6 +144,8 @@ if (ua.includes("Locket")) {
             ]
         }),
         camera_roll_preview_enabled: "true",
+        camera_roll_upload_enabled: "true",
+        camera_roll_photo_upload_enabled: "true",
         camera_roll_video_enabled: "true",
         camera_roll_video_upload_enabled: "true",
         internal_camera_roll_video_upload_enabled: "true",
@@ -152,11 +155,11 @@ if (ua.includes("Locket")) {
         camera_microphone_enabled: "true",
         audio_session_deactivation_enabled: "true",
         zoom_enabled: "true",
-        upload_main: "false",
-        upload_main_image_quality: "1.0",
-        upload_main_image_size: "2048",
-        upload_thumbnail_image_quality: "1.0",
-        upload_thumbnail_image_size: "1440"
+        upload_main: "true",
+        upload_main_image_quality: "0.8",
+        upload_main_image_size: "1440",
+        upload_thumbnail_image_quality: "0.8",
+        upload_thumbnail_image_size: "1020"
     });
 
     // ============================================================

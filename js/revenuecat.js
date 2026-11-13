@@ -230,6 +230,7 @@ if (!$response || !$response.body) {
         product_identifier: goldProduct,
         expires_date: "9999-01-09T10:10:14Z"
       };
+      obj.subscriber.entitlements["gold"] = Object.assign({}, obj.subscriber.entitlements["Gold"]);
     } else {
       const match = Object.keys(mapping).find(k => ua.includes(k));
       if (match) {
